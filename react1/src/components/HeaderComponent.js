@@ -17,7 +17,7 @@ class Header extends Component {
             isNavOpen : false
         };
     }
-    
+
     render() {
         return (
             <React.Fragment>
@@ -31,17 +31,17 @@ class Header extends Component {
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to="/aboutus">
-                                            <i className="fa fa-info fa-lg" /> Blogs
+                                        <NavLink className="nav-link" to="/blog">
+                                            <i className="fa fa-info fa-lg" /> Blog
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to="/directory">
+                                        <NavLink className="nav-link" to="/movies">
                                             <i className="fa fa-list fa-lg" /> Favorite Movies
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to="/contactus">
+                                        <NavLink className="nav-link" to="/contactme">
                                             <i className="fa fa-address-card fa-lg" /> Contact Me
                                         </NavLink>
                                 </NavItem>
