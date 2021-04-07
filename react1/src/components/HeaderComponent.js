@@ -16,6 +16,13 @@ class Header extends Component {
         this.state = {
             isNavOpen : false
         };
+        this.toggleNav = this.toggleNav.bind(this);
+    }
+
+    toggleNav() {
+        this.setState({
+            isNavOpen: !this.state.isNavOpen
+        });
     }
 
     render() {
@@ -23,19 +30,20 @@ class Header extends Component {
             <React.Fragment>
                  <Navbar dark sticky="top" expand="md">
                     <div ClassName="container">
+                        <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar>
-                                <NavItem>
+                            <Nav className="ml-5" navbar >
+                                <NavItem className="mr-4">
                                         <NavLink className="nav-link" to="/home">
                                             <i className="fa fa-home fa-lg" /> Home
                                         </NavLink>
-                                    </NavItem>
-                                    <NavItem>
+                                    </NavItem >
+                                    <NavItem className="mr-4">
                                         <NavLink className="nav-link" to="/blog">
                                             <i className="fa fa-info fa-lg" /> Blog
                                         </NavLink>
                                     </NavItem>
-                                    <NavItem>
+                                    <NavItem className="mr-4">
                                         <NavLink className="nav-link" to="/projects">
                                             <i className="fa fa-list fa-lg" /> Projects
                                         </NavLink>
