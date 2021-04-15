@@ -3,7 +3,7 @@ import React, { Component }  from 'react';
 import MovieData from './MovieData';
 
 
-class Home extends Component{
+class Movies extends Component{
     render() {
         return(
             <div>
@@ -15,4 +15,4 @@ class Home extends Component{
 }
 
 
-export default Home;
+export default Movies;

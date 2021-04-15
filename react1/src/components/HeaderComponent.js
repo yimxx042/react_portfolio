@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component }  from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
     Button, Modal, ModalHeader, ModalBody,
     Form, FormGroup, Input, Label } from 'reactstrap';
@@ -35,22 +35,22 @@ class Header extends Component {
                             <Nav className="ml-5" navbar >
                                 <NavItem className="mr-4">
                                         <NavLink className="nav-link" to="/home">
-                                            <i className="fa fa-home fa-lg" /> Home
+                                            <i className="fa fa-home fa-lg" /> Home-Trailer
                                         </NavLink>
                                     </NavItem >
                                     <NavItem className="mr-4">
                                         <NavLink className="nav-link" to="/blog">
-                                            <i className="fa fa-info fa-lg" /> Blog
+                                            <i className="fa fa-info fa-lg" /> Blog and comment-Movie
                                         </NavLink>
                                     </NavItem>
                                     <NavItem className="mr-4">
-                                        <NavLink className="nav-link" to="/projects">
-                                            <i className="fa fa-list fa-lg" /> Projects
+                                        <NavLink className="nav-link" to="/movies">
+                                            <i className="fa fa-list fa-lg" /> Movies
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to="/contactme">
-                                            <i className="fa fa-address-card fa-lg" /> Contact Me
+                                        <NavLink className="nav-link" to="/feedback">
+                                            <i className="fa fa-address-card fa-lg" /> Feedback
                                         </NavLink>
                                 </NavItem>
                             </Nav>

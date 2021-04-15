@@ -105,24 +105,24 @@ class Contact extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <Breadcrumb>
+                        {/* <Breadcrumb>
                             <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                            <BreadcrumbItem active>Contact Me</BreadcrumbItem>
-                        </Breadcrumb>
+                            <BreadcrumbItem active>Feedback</BreadcrumbItem>
+                        </Breadcrumb> */}
                         
                         <hr />
                     </div>
                 </div>
 
                 <div className="row row-content">
-                    <div className="col-12">
+                    <div className="col-12 headfont">
                         <h2>Send me your Feedback</h2>
                         <hr />
                     </div>
-                    <div className="col-md-10">
+                    <div className="col-md-10 bodyfont">
                         <Form onSubmit={this.handleSubmit}>
                         <FormGroup row>
-                        <Label htmlFor="firstName" md={2}> Name</Label>
+                        <Label htmlFor="firstName" md={2}></Label>
                                 <Col md={5}>
                                     <Input type="text" id="firstName" name="firstName"
                                         placeholder="First Name"
@@ -143,7 +143,7 @@ class Contact extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label htmlFor="Company" md={2}>Company</Label>
+                                <Label htmlFor="Company" md={2}></Label>
                                 <Col md={10}>
                                     <Input type="tel" id="company" name="company"
                                         placeholder="company"
@@ -155,7 +155,7 @@ class Contact extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label htmlFor="phoneNum" md={2}>Phone</Label>
+                                <Label htmlFor="phoneNum" md={2}></Label>
                                 <Col md={10}>
                                     <Input type="tel" id="phoneNum" name="phoneNum"
                                         placeholder="Phone number"
@@ -167,7 +167,7 @@ class Contact extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label htmlFor="email" md={2}>Email</Label>
+                                <Label htmlFor="email" md={2}></Label>
                                 <Col md={10}>
                                     <Input type="email" id="email" name="email"
                                         placeholder="Email"
@@ -200,7 +200,7 @@ class Contact extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label htmlFor="feedback" md={2}>Your Feedback</Label>
+                                <Label htmlFor="feedback" md={2}></Label>
                                 <Col md={10}>
                                     <Input type="textarea" id="feedback" name="feedback"
                                         rows="12"

@@ -1,7 +1,163 @@
+*{
+  box-sizing: border-box;
+}
+ 
  body {
   font-family: "Open Sans", sans-serif;
+  background-color: rgb(10, 10, 10);
 } 
 
 .navbar-dark {
-  background-color: #6a84da;
+  background-color: #500c0c;
 }
+
+
+
+/* .form {
+  display:grid;
+} */
+
+.searchbox:focus {
+  box-shadow: 0px 0px 8px 3px #4484C4;
+
+}
+
+section {
+  padding: 15px;
+
+}
+
+.headfont {
+  padding-top:50px;
+  padding-bottom: 30px;
+  color:rgb(151, 142, 142);
+  text-align: center;
+}
+
+.bodyfont {
+  color:rgb(133, 122, 122)
+}
+
+header h1 {
+  margin-top:200px;
+  color: white;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 500px;
+}
+
+main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+ 
+}
+
+.searchbox {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 30px;
+
+  border: none;
+  outline: none;
+  background: none;
+  
+
+  background-color:white;
+  border-radius: 8px;
+
+  
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: 0.4s ease-out;
+}
+
+.input {
+  padding: 0.3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px - 15px;
+ 
+}
+
+.results .result {
+  width: 33.333%;
+  min-width: 250px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  
+
+  cursor: pointer;
+}
+
+
+.result .result img {
+  display: block;
+  width: 100%
+}
+
+.result .result h3 {
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  background: #68b2f7;
+  flex: 1 1 100%;
+  transition: 0.4s ease-out;
+}
+
+.results .result:hover h3 {
+  background: rgb(169, 193, 221);
+  color: black;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #101113;
+
+  overflow-y: scroll;
+}
+
+.popup .content {
+  
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin-top: 100px;
+  padding: 25px;
+  color: white;
+}
+
+.popup .content h2 {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.popup .content h2 span {
+  font-weight: 300;
+  font-size: 20px;
+
+}
+
+.popup .content .rating {
+  margin-bottom: 30px;
+}
+
+.popup.content .plot {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px 30px;
+}
+
