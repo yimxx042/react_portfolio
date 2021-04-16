@@ -163,7 +163,7 @@ main {
 
 .cardtitle {
   border-bottom: solid 2px black;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .cardtext {
@@ -189,3 +189,7 @@ main {
   margin-right: 20px;
 }
 
+.bloginfotitle {
+  font-size: 50px;
+  border-bottom: solid ;
+}

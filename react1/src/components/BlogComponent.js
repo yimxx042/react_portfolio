@@ -1,11 +1,12 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardImgOverlay } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 
 
 
-function RenderBlog({bloginfo, onClick}) {
+function RenderBlog({bloginfo}) {
     return (
         <Card className="entirecard">
             <CardImg width="100%" height="400px" src={bloginfo.image} alt={bloginfo.title} />
@@ -17,7 +18,9 @@ function RenderBlog({bloginfo, onClick}) {
                     {bloginfo.details}
                 </CardText>
                 <div className="d-flex justify-content-end">
-                    <Button color="danger" onClick={() => onClick(bloginfo.id)}>Read More</Button> 
+                    <Link to ={`/blog/${bloginfo.id}`}>
+                        <Button color="danger">Read More</Button> 
+                    </Link>
                 </div>
             </CardBody>
         </Card>
