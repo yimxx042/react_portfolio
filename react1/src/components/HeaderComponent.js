@@ -35,17 +35,17 @@ class Header extends Component {
                             <Nav className="ml-5" navbar >
                                 <NavItem className="mr-4">
                                         <NavLink className="nav-link" to="/home">
-                                            <i className="fa fa-home fa-lg" /> Home-Trailer
+                                            <i className="fa fa-home fa-lg" /> Movie Trailer
                                         </NavLink>
                                     </NavItem >
                                     <NavItem className="mr-4">
-                                        <NavLink className="nav-link" to="/blog">
-                                            <i className="fa fa-info fa-lg" /> Blog and comment-Movie
+                                        <NavLink className="nav-link" to="/movies">
+                                            <i className="fa fa-list fa-lg" /> Movie Ratings
                                         </NavLink>
                                     </NavItem>
                                     <NavItem className="mr-4">
-                                        <NavLink className="nav-link" to="/movies">
-                                            <i className="fa fa-list fa-lg" /> Movies
+                                        <NavLink className="nav-link" to="/blog">
+                                            <i className="fa fa-info fa-lg" /> Movie Blogs
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
