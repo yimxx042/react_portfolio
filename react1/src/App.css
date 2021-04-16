@@ -161,3 +161,31 @@ main {
   margin: 0px -15px 30px;
 }
 
+.cardtitle {
+  border-bottom: solid 2px black;
+  font-size: 20px;
+}
+
+.cardtext {
+  font-family: "Open Sans", sans-serif;
+}
+
+.entirecard {
+  margin-bottom: 50px;
+  
+}
+
+.blogtitle {
+  color: rgb(161, 154, 154);
+  margin-top: 50px;
+  Margin-bottom: 50px;
+  font-size: 50px;
+  background-color: rgb(14, 13, 13);
+}
+
+.movieexample {
+  color:rgb(139, 109, 109);
+  text-align: right;
+  margin-right: 20px;
+}
+

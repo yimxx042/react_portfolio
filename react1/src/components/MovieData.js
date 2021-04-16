@@ -56,10 +56,13 @@ function MovieData(){
         </header>
         <main>
             <SearchMovie handleInput={handleInput} search={search}/>
+            <p className="movieexample">Popular Search | #Horror 
+            #Comedy #Romance #Hero</p>
             <Results results={state.results} openPopup={openPopup} />
 
             {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
         </main>
+        
         </div>
     );
 

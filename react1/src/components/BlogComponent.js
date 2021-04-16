@@ -1,16 +1,24 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardImgOverlay } from 'reactstrap';
-import Main from './MainComponent';
+import { Button } from 'reactstrap';
+
 
 
 
 function RenderBlog({bloginfo, onClick}) {
     return (
-        <Card onClick={() => onClick(bloginfo.id)}>
-            <CardImg width="100%" height="100%" src={bloginfo.image} alt={bloginfo.title} />
-            <CardBody>
-                <CardTitle>{bloginfo.title}</CardTitle>
-                <CardText>{bloginfo.details}</CardText>
+        <Card className="entirecard">
+            <CardImg width="100%" height="400px" src={bloginfo.image} alt={bloginfo.title} />
+            <CardBody className="cardbody"> 
+                <CardTitle className="cardtitle">
+                    #{bloginfo.id+1} <b>{bloginfo.title}</b>
+                </CardTitle>
+                <CardText className="cardtext">
+                    {bloginfo.details}
+                </CardText>
+                <div className="d-flex justify-content-end">
+                    <Button color="danger" onClick={() => onClick(bloginfo.id)}>Read More</Button> 
+                </div>
             </CardBody>
         </Card>
     );
@@ -30,7 +38,7 @@ function Blog(props) {
 
     const blog = props.bloginfos.map(bloginfo => {
         return (
-            <div key={bloginfo.id} className="col-md-5 m-1">
+            <div key={bloginfo.id} className="col-md-5 m-1 d-flex justify-content-center">
                 <RenderBlog bloginfo={bloginfo} onClick={props.onClick} />
             </div>
         );
@@ -38,9 +46,10 @@ function Blog(props) {
 
     return (
         <div className="container">
-            <div className="row">
-                    {blog}
-            </div>
+            <h1 className="blogtitle">Movie Blogs</h1>
+                <div className="row">
+                        {blog}
+                </div>
         </div>
     );
 
