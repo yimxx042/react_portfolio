@@ -1,9 +1,7 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardImgOverlay } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-
-
 
 
 function RenderBlog({bloginfo}) {
@@ -12,7 +10,7 @@ function RenderBlog({bloginfo}) {
             <CardImg width="100%" height="400px" src={bloginfo.image} alt={bloginfo.title} />
             <CardBody className="cardbody"> 
                 <CardTitle className="cardtitle">
-                    #{bloginfo.id+1} <b>{bloginfo.title}</b>
+                    #{bloginfo.id+1} <b>{bloginfo.title}</b> <span className="rating"> ✰ {bloginfo.ratings} </span>
                 </CardTitle>
                 <CardText className="cardtext">
                     {bloginfo.details}
@@ -27,22 +25,12 @@ function RenderBlog({bloginfo}) {
     );
 }
 
-// function Results ({ results, openPopup}) {
-//     return (
-//         <section className="results">
-//             {results.map(result => (
-//                 <Result key={result.imdbID} result={result} openPopup={openPopup} />
-//             ))}
-//         </section>
-//     )
-// }
-
 function Blog(props) {
 
     const blog = props.bloginfos.map(bloginfo => {
         return (
             <div key={bloginfo.id} className="col-md-5 m-1 d-flex justify-content-center">
-                <RenderBlog bloginfo={bloginfo} onClick={props.onClick} />
+                <RenderBlog bloginfo={bloginfo} />
             </div>
         );
     });

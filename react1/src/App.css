@@ -101,7 +101,13 @@ main {
 
 .result .result img {
   display: block;
-  width: 100%
+  width: 100%;
+}
+
+.result h3 {
+  color: rgb(128, 114, 114);
+  font-size: 20px;
+ 
 }
 
 .result .result h3 {
@@ -112,6 +118,7 @@ main {
   background: #68b2f7;
   flex: 1 1 100%;
   transition: 0.4s ease-out;
+  text-align: center;
 }
 
 .results .result:hover h3 {
@@ -122,10 +129,10 @@ main {
 .popup {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #101113;
+  
+  width: 50vw;
+  height: 80vh;
+  background-color: #29292b;
 
   overflow-y: scroll;
 }
@@ -135,20 +142,20 @@ main {
   display: block;
   width: 100%;
   max-width: 960px;
-  margin-top: 100px;
+  margin-top: 30px;
   padding: 25px;
-  color: white;
+  color: rgb(165, 138, 138);
 }
 
 .popup .content h2 {
   font-size: 25px;
   font-weight: 500;
+
 }
 
 .popup .content h2 span {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 20px;
-
 }
 
 .popup .content .rating {
@@ -158,38 +165,53 @@ main {
 .popup.content .plot {
   display: flex;
   flex-wrap: wrap;
-  margin: 0px -15px 30px;
-}
-
-.cardtitle {
-  border-bottom: solid 2px black;
-  font-size: 30px;
-}
-
-.cardtext {
-  font-family: "Open Sans", sans-serif;
-}
-
-.entirecard {
-  margin-bottom: 50px;
   
 }
 
-.blogtitle {
+.popup .content .plot img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+
+.cardtitle {
+  border-bottom: solid 2px black;
+  font-size: 20px;
+}
+
+/* .cardtext {
+  font-family: "Open Sans", sans-serif;
+} */
+
+ .entirecard {
+  margin-bottom: 50px;
+  
+} 
+
+/* .blogtitle {
   color: rgb(161, 154, 154);
   margin-top: 50px;
   Margin-bottom: 50px;
   font-size: 50px;
   background-color: rgb(14, 13, 13);
-}
+} */
 
 .movieexample {
   color:rgb(139, 109, 109);
   text-align: right;
   margin-right: 20px;
 }
-
+/* 
 .bloginfotitle {
-  font-size: 50px;
+  font-size: 30px;
   border-bottom: solid ;
+} */
+
+.rating {
+  text-align: right;
+  color: rgb(10, 99, 182);
+  font-size: 15px;
+
 }

@@ -8,8 +8,7 @@ class Movies extends Component{
         return(
             <div>
                 <MovieData />
-                </div>
-                
+                </div>          
         )
     }
 }
