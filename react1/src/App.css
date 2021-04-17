@@ -222,16 +222,19 @@ main {
 }
 
 .bloginfocard.card {
-  width: 350px;
+  width: 400px;
   margin-top: 10px;
   margin-bottom: 50px;
 }
 
 .blogtitle {
-  color: white;
+  color:  rgb(175, 133, 133);
   margin-top: 60px;
   margin-bottom: 40px;
   text-align: center;
+  font-size: 50px;
+  border-bottom: solid 1px;
+  padding-bottom: 20px;
 }
 
 .blogtitle2 {

@@ -37,7 +37,7 @@ function Blog(props) {
 
     return (
         <div className="container">
-            <h1 className="blogtitle">Movie Blogs</h1>
+            <h1 className="blogtitle">MOVIE REVIEWS</h1>
                 <div className="row d-flex justify-content-center">
                         {blog}
                 </div>

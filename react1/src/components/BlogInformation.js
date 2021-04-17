@@ -71,6 +71,7 @@ class CommentForm extends Component {
                                     <Label htmlFor="text" md={12}>Comment</Label>
                                     <Col md={12}>
                                         <Control.textarea model=".text" id="text" name="text"
+                                            placeholder="What is your opinion?"
                                             rows="10"
                                             className="form-control"
                                         />
@@ -78,9 +79,11 @@ class CommentForm extends Component {
                                 </Row>
                                 <Row className="form-group">
                                     <Col md={{size: 12}} >
-                                        <Button color="danger" type="submit" >
-                                            Submit
-                                        </Button>
+                                        <div className="d-flex justify-content-center">
+                                            <Button color="danger" size="lg" block type="submit" >
+                                                Submit
+                                            </Button>
+                                        </div>
                                     </Col>
                                 </Row>
                             </LocalForm>
@@ -104,7 +107,7 @@ function RenderComments({postComment, bloginfoId}) {
       return(
           <div key={bloginfo.id} className="col-md-12 m-1 d-flex justify-content-center">
               <Card className="bloginfocard">
-                <CardImg width="100%" height="300px" src={bloginfo.image} alt={bloginfo.title} />
+                <CardImg width="100%" height="400px" src={bloginfo.image} alt={bloginfo.title} />
                       <CardBody>
                             <CardTitle className="blogcardtitle"><b>{bloginfo.title}</b></CardTitle>
                             <CardText>{bloginfo.details}</CardText>
@@ -118,12 +121,12 @@ function BlogInformation(props){
     if (props.bloginfo){
         return (
             <div className="container d-flex justify-content-center">
-                <div className="row">
+                <div className="row d-flex justify-content-center">
                     <div className="col-12">
-                        <h1 className="blogtitle2">Review</h1>
+                        <h1 className="blogtitle2">Did you like this movie? Let`s discuss about it together!</h1>
                         <RenderBloginformation bloginfo={props.bloginfo[0]} />  
                     </div>   
-                    <div className="col-12">
+                    <div className="col-10 col-md-10 col-sm-12">
                     <RenderComments />
                     </div>         
                 </div>
