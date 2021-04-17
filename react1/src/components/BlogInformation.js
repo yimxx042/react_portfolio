@@ -4,11 +4,11 @@ import { Card, CardImg, CardText, CardBody, CardTitle} from 'reactstrap';
 
   function RenderBloginformation({bloginfo}) {
       return(
-          <div key={bloginfo.id} className="col-md-5 m-1">
-              <Card>
-                <CardImg width="100%" height="400px" src={bloginfo.image} alt={bloginfo.title} />
+          <div key={bloginfo.id} className="col-md-12 m-1 d-flex justify-content-center">
+              <Card className="bloginfocard">
+                <CardImg width="250px" height="300px" src={bloginfo.image} alt={bloginfo.title} />
                       <CardBody>
-                            <CardTitle>{bloginfo.title}</CardTitle>
+                            <CardTitle className="blogcardtitle"><b>{bloginfo.title}</b></CardTitle>
                             <CardText>{bloginfo.details}</CardText>
                       </CardBody>
               </Card> 

@@ -215,3 +215,20 @@ main {
   font-size: 15px;
 
 }
+
+.blogcardtitle {
+  font-size: 20px;
+  border-bottom: solid rgb(80, 10, 10) ;
+}
+
+.bloginfocard.card {
+  width: 400px;
+  margin-top: 30px;
+}
+
+.blogtitle {
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  text-align: center;
+}
