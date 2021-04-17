@@ -51,8 +51,8 @@ function MovieData(){
 
     return (
         <div className="MovieData">  
-        <header>
-            <h1>Check Movies before you Watch</h1>
+        <header> 
+            <h1>Check Movies before you Watch</h1>   
         </header>
         <main>
             <SearchMovie handleInput={handleInput} search={search}/>
