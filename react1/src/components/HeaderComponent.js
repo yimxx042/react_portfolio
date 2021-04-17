@@ -40,12 +40,12 @@ class Header extends Component {
                                     </NavItem >
                                     <NavItem className="mr-4">
                                         <NavLink className="nav-link" to="/movies">
-                                            <i className="fa fa-list fa-lg" /> Movie Ratings
+                                            <i className="fa fa-list fa-lg" /> Search
                                         </NavLink>
                                     </NavItem>
                                     <NavItem className="mr-4">
                                         <NavLink className="nav-link" to="/blog">
-                                            <i className="fa fa-info fa-lg" /> Movie Blogs
+                                            <i className="fa fa-info fa-lg" /> Reviews
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>

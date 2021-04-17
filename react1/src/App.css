@@ -222,8 +222,9 @@ main {
 }
 
 .bloginfocard.card {
-  width: 400px;
-  margin-top: 30px;
+  width: 350px;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .blogtitle {
@@ -231,4 +232,26 @@ main {
   margin-top: 60px;
   margin-bottom: 40px;
   text-align: center;
+}
+
+.blogtitle2 {
+  color: rgb(175, 133, 133);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.comments h4{
+  text-align: center;
+  color:rgb(175, 133, 133);
+  font-size: 25px;
+  margin-top: 30px;
+  border-top: solid 1px rgb(54, 46, 46);
+  padding-top: 30px;
+  
+}
+
+.comments {
+  margin-top: 50px;
 }
