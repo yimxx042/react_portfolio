@@ -34,11 +34,11 @@ class Header extends Component {
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav className="ml-5" navbar >
                                 <NavItem className="mr-4">
-                                        <NavLink className="nav-link" to="/home">
+                                        {/* <NavLink className="nav-link" to="/home">
                                             <i className="fa fa-home fa-lg" /> Movie Trailer
                                         </NavLink>
                                     </NavItem >
-                                    <NavItem className="mr-4">
+                                    <NavItem className="mr-4"> */}
                                         <NavLink className="nav-link" to="/movies">
                                             <i className="fa fa-list fa-lg" /> Search
                                         </NavLink>

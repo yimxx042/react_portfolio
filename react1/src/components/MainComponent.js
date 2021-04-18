@@ -8,6 +8,7 @@ import { BLOGINFOS } from '../shared/bloginfos';
 import BlogInformation from './BlogInformation';
 
 
+
 // import { connect } from 'react-redux';
 
 
@@ -31,11 +32,13 @@ class Main extends Component {
         return (
             <div>
                 <Header />
-                <Switch>
-                    <Route exact path ='/feedback' component= { Contact } />
+                <Switch>               
                     <Route path ='/movies' component= { Movies } />
                     <Route exact path='/blog' render={() => <Blog bloginfos={this.state.bloginfos} />} />
                     <Route path='/blog/:bloginfoId' component={BloginformationId} />
+                    <Route exact path ='/feedback' component= { Contact } />
+                    <Redirect to='./movies' />
+                    {/* <Route path ='/home' component= { Home } /> */}
 
                 </Switch>
             </div>
