@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Button, Label, Col, Row} from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
+import { Link } from 'react-router-dom';
 
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
@@ -19,9 +22,15 @@ class CommentForm extends Component {
                 comment: false,
             }
         };
+        this.toggleModal = this.toggleModal.bind(this);   
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    toggleModal(){
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+    
     handleSubmit(values) {
         this.props.postComment(this.props.bloginfoId, values.rating, values.author, values.text);
     }
@@ -107,7 +116,7 @@ function RenderComments({postComment, bloginfoId}) {
       return(
           <div key={bloginfo.id} className="col-md-12 m-1 d-flex justify-content-center">
               <Card className="bloginfocard">
-                <CardImg width="100%" height="400px" src={bloginfo.image} alt={bloginfo.title} />
+                <CardImg width="100%" height="400px" src={ baseUrl + bloginfo.image} alt={bloginfo.title} />
                       <CardBody>
                             <CardTitle className="blogcardtitle"><b>{bloginfo.title}</b></CardTitle>
                             <CardText>{bloginfo.details}</CardText>
@@ -127,7 +136,10 @@ function BlogInformation(props){
                         <RenderBloginformation bloginfo={props.bloginfo[0]} />  
                     </div>   
                     <div className="col-10 col-md-10 col-sm-12">
-                    <RenderComments />
+                    <RenderComments 
+                        postComment={props.postComment}
+                        bloginfoId={props.bloginfo.id}
+                    />
                     </div>         
                 </div>
             </div>

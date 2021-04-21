@@ -2,12 +2,12 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-
+import { baseUrl } from '../shared/baseUrl';
 
 function RenderBlog({bloginfo}) {
     return (
             <Card className="entirecard">
-                <CardImg width="100%" height="400px" src={bloginfo.image} alt={bloginfo.title} />
+                <CardImg width="100%" height="400px" src={baseUrl + bloginfo.image} alt={bloginfo.title} />
                 <CardBody className="cardbody"> 
                     <CardTitle className="cardtitle">
                         #{bloginfo.id+1} <b>{bloginfo.title}</b> <span className="rating"> ✰ {bloginfo.ratings} </span>
@@ -27,7 +27,7 @@ function RenderBlog({bloginfo}) {
 
 function Blog(props) {
 
-    const blog = props.bloginfos.map(bloginfo => {
+    const blog = props.bloginfos.bloginfos.map(bloginfo => {
         return (
             <div key={bloginfo.id} className="col-md-5 m-1 d-flex justify-content-center">
                 <RenderBlog bloginfo={bloginfo} />

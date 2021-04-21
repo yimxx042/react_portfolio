@@ -258,3 +258,8 @@ main {
 .comments {
   margin-top: 50px;
 }
+
+.contact-title {
+  text-align: center;
+  color: #9b6f6f;
+}

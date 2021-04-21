@@ -4,28 +4,44 @@ import Contact from './ContactComponent';
 import Blog from './BlogComponent';
 import Movies from './MovieComponent'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { BLOGINFOS } from '../shared/bloginfos';
 import BlogInformation from './BlogInformation';
-
+import { connect } from 'react-redux';
+import { postComment, fetchBloginfos, postFeedback, fetchComments  } from '../redux/ActionCreators';
+import { actions } from 'react-redux-form';
 
 
 // import { connect } from 'react-redux';
 
+const mapStateToProps = state => {
+    return {
+        bloginfos: state.bloginfos
+    };
+};
+
+const mapDispatchToProps = {
+    postComment: (bloginfoId, rating, author, text) => (postComment(bloginfoId, rating, author, text)),
+    fetchBloginfos: () => (fetchBloginfos()),
+    resetFeedbackForm: () => (actions.reset('feedbackForm')),
+    postFeedback: (text) => (postFeedback(text)),
+    fetchComments: () => (fetchComments())
+}
 
 
 class Main extends Component {
-        constructor(props) {
-        super(props);
-        this.state = {
-            bloginfos: BLOGINFOS
-        };
-    }  
+    componentDidMount() {
+        this.props.fetchBloginfos();
+    }
 
     render() {
 
         const BloginformationId = ({match}) => {
             return (
-                <BlogInformation bloginfo={this.state.bloginfos.filter(bloginfo => bloginfo.id === +match.params.bloginfoId[0])} />
+                <BlogInformation 
+                    bloginfo={this.props.bloginfos.bloginfos.filter(bloginfo => bloginfo.id === +match.params.bloginfoId[0])}
+                    errMess={this.props.bloginfos.errMess}
+                    postComment={this.props.postComment}
+                
+                />
             );
         };
 
@@ -34,9 +50,9 @@ class Main extends Component {
                 <Header />
                 <Switch>               
                     <Route path ='/movies' component= { Movies } />
-                    <Route exact path='/blog' render={() => <Blog bloginfos={this.state.bloginfos} />} />
+                    <Route exact path='/blog' render={() => <Blog bloginfos={this.props.bloginfos} />} />
                     <Route path='/blog/:bloginfoId' component={BloginformationId} />
-                    <Route exact path ='/feedback' component= { Contact } />
+                    <Route exact path ='/feedback' render={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm}  postFeedback={this.props.postFeedback}/> } />
                     <Redirect to='./movies' />
                     {/* <Route path ='/home' component= { Home } /> */}
 
@@ -48,4 +64,4 @@ class Main extends Component {
     
 }
 
-export default withRouter(Main) ;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
