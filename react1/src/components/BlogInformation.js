@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Button, Label, Col, Row} 
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import { Link } from 'react-router-dom';
 
 const required = val => val && val.length;
@@ -22,16 +23,18 @@ class CommentForm extends Component {
                 comment: false,
             }
         };
-        this.toggleModal = this.toggleModal.bind(this);   
+        this.toggleModal = this.toggleModal.bind(this);  
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+  
     toggleModal(){
         this.setState({
             isModalOpen: !this.state.isModalOpen
         });
     }
-    
+
     handleSubmit(values) {
+        this.toggleModal();
         this.props.postComment(this.props.bloginfoId, values.rating, values.author, values.text);
     }
 
@@ -89,7 +92,7 @@ class CommentForm extends Component {
                                 <Row className="form-group">
                                     <Col md={{size: 12}} >
                                         <div className="d-flex justify-content-center">
-                                            <Button color="danger" size="lg" block type="submit" >
+                                            <Button toggle={this.toggleModal} color="danger" size="lg" block type="submit" >
                                                 Submit
                                             </Button>
                                         </div>
@@ -100,21 +103,39 @@ class CommentForm extends Component {
     }
 }
 
-function RenderComments({postComment, bloginfoId}) {   
+function RenderComments({comments, postComment, bloginfoId}) {
+    if(comments) {
         return (
-            <div className="comments m-1">
+            <div className="col-md-12 m-1">
                 <h4>Comments</h4>
+            <Stagger in>
+                {
+                    comments.map(comment => {
+                        return (
+                            <Fade in key={comment.id}>
+                                <div id="comment-border">
+                                    <p>
+                                        {comment.text}<br />
+                                        -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+                                    </p>
+                                </div>
+                            </Fade>
+                        );
+                    })
+                }
+            </Stagger>
                 <CommentForm bloginfoId={bloginfoId} postComment={postComment} />
             </div>
-        )
-    
+        );
+    } 
     return <div />       
 }
 
 
+
   function RenderBloginformation({bloginfo}) {
       return(
-          <div key={bloginfo.id} className="col-md-12 m-1 d-flex justify-content-center">
+          <div className="col-md-12 m-1 d-flex justify-content-center">
               <Card className="bloginfocard">
                 <CardImg width="100%" height="400px" src={ baseUrl + bloginfo.image} alt={bloginfo.title} />
                       <CardBody>
@@ -135,6 +156,9 @@ function BlogInformation(props){
                         <h1 className="blogtitle2">Did you like this movie? Let`s discuss about it together!</h1>
                         <RenderBloginformation bloginfo={props.bloginfo[0]} />  
                     </div>   
+                    <div className="col-10 col-md-10 col-sm-12">
+                    <RenderComments comments={props.comments} />
+                    </div>
                     <div className="col-10 col-md-10 col-sm-12">
                     <RenderComments 
                         postComment={props.postComment}

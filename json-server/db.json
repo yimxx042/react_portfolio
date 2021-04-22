@@ -72,5 +72,77 @@
       "featured": false,
       "details": "Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers."
     }
+  ],
+  "comments": [
+    {
+      "id": 0,
+      "bloginfoId": 0,
+      "rating": 5,
+      "text": "I love this movie!",
+      "author": "Tinus Lorvaldes",
+      "date": "2018-10-25T16:30Z"
+    },
+    {
+      "id": 1,
+      "bloginfoId": 0,
+      "rating": 4,
+      "text": "this movie is amazing.",
+      "author": "Brennen Ech",
+      "date": "2017-06-17T03:33Z"
+    },
+    {
+      "author": "test",
+      "text": "test",
+      "date": "2021-04-22T18:10:25.579Z",
+      "id": 2
+    },
+    {
+      "author": "testtest",
+      "text": "testtest",
+      "date": "2021-04-22T18:11:56.371Z",
+      "id": 3
+    }
+  ],
+  "feedback": [
+    {
+      "id": 0,
+      "firstname": "Test",
+      "lastname": "Test",
+      "phoneNum": "12345",
+      "email": "test@test.com",
+      "agree": true,
+      "contactType": "Email",
+      "feedback": "test"
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "phoneNum": "1234123412",
+      "email": "fjg@xgfh.com",
+      "agree": true,
+      "contactType": "Phone",
+      "feedback": "test",
+      "id": 1
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "phoneNum": "12341231234",
+      "email": "fjg@xgfh.com",
+      "agree": true,
+      "contactType": "Phone",
+      "feedback": "test",
+      "id": 2
+    },
+    {
+      "firstName": "test2",
+      "lastName": "test2",
+      "phoneNum": "12312341234",
+      "email": "test@test.com",
+      "agree": true,
+      "contactType": "By Email",
+      "feedback": "test",
+      "id": 3
+    }
   ]
 }

@@ -14,12 +14,13 @@ import { actions } from 'react-redux-form';
 
 const mapStateToProps = state => {
     return {
-        bloginfos: state.bloginfos
+        bloginfos: state.bloginfos,
+        comments: state.comments
     };
 };
 
 const mapDispatchToProps = {
-    postComment: (bloginfoId, rating, author, text) => (postComment(bloginfoId, rating, author, text)),
+    postComment: (bloginfoId, rating, author, text ) => (postComment(bloginfoId, rating, author, text)),
     fetchBloginfos: () => (fetchBloginfos()),
     resetFeedbackForm: () => (actions.reset('feedbackForm')),
     postFeedback: (text) => (postFeedback(text)),
@@ -30,6 +31,7 @@ const mapDispatchToProps = {
 class Main extends Component {
     componentDidMount() {
         this.props.fetchBloginfos();
+        this.props.fetchComments();
     }
 
     render() {
@@ -39,6 +41,8 @@ class Main extends Component {
                 <BlogInformation 
                     bloginfo={this.props.bloginfos.bloginfos.filter(bloginfo => bloginfo.id === +match.params.bloginfoId[0])}
                     errMess={this.props.bloginfos.errMess}
+                    comments={this.props.comments.comments.filter(comment => comment.bloginfoId === +match.params.bloginfoId)}
+                    commentsErrMess={this.props.comments.errMess}
                     postComment={this.props.postComment}
                 
                 />

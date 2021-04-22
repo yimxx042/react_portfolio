@@ -263,3 +263,10 @@ main {
   text-align: center;
   color: #9b6f6f;
 }
+
+#comment-border {
+  border-bottom: solid 1px rgb(131, 106, 106);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: rgb(126, 99, 99);
+}
