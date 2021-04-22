@@ -91,6 +91,7 @@
       "date": "2017-06-17T03:33Z"
     },
     {
+      "bloginfoId": 0,
       "author": "test",
       "text": "test",
       "date": "2021-04-22T18:10:25.579Z",
@@ -101,6 +102,12 @@
       "text": "testtest",
       "date": "2021-04-22T18:11:56.371Z",
       "id": 3
+    },
+    {
+      "author": "test3",
+      "text": "test3",
+      "date": "2021-04-22T19:41:04.537Z",
+      "id": 4
     }
   ],
   "feedback": [

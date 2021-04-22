@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Button, Label, Col, Row} from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Button, Label, Col, Row, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
@@ -40,7 +40,14 @@ class CommentForm extends Component {
 
     render() {
         return (
-            <LocalForm onSubmit={values => this.handleSubmit(values)}>
+            <React.Fragment>
+            <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+            <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+                <ModalBody>
+                  <p>Thanks for your comments</p>
+                    </ModalBody> 
+                    </ Modal>
+                        <LocalForm onSubmit={values => this.props.postComment(this.props.bloginfoId, values.rating, values.author, values.text)}>
                             <Row className="form-group">
                                 <Label htmlFor="rating" md={12}>Rating</Label>
                                     <Col md={12}>
@@ -92,13 +99,14 @@ class CommentForm extends Component {
                                 <Row className="form-group">
                                     <Col md={{size: 12}} >
                                         <div className="d-flex justify-content-center">
-                                            <Button toggle={this.toggleModal} color="danger" size="lg" block type="submit" >
+                                            <Button color="danger" size="lg" block type="submit" >
                                                 Submit
                                             </Button>
                                         </div>
                                     </Col>
                                 </Row>
                             </LocalForm>
+                            </React.Fragment>
         )
     }
 }
@@ -157,14 +165,12 @@ function BlogInformation(props){
                         <RenderBloginformation bloginfo={props.bloginfo[0]} />  
                     </div>   
                     <div className="col-10 col-md-10 col-sm-12">
-                    <RenderComments comments={props.comments} />
-                    </div>
-                    <div className="col-10 col-md-10 col-sm-12">
                     <RenderComments 
+                        comments={props.comments}
                         postComment={props.postComment}
-                        bloginfoId={props.bloginfo.id}
+                        bloginfoId={props.bloginfo.id}        
                     />
-                    </div>         
+                    </div>       
                 </div>
             </div>
         )

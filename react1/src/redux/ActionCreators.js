@@ -92,10 +92,10 @@ export const addComment = comment => ({
 
 
 
-export const postComment = (bloginfosId, rating, author, text) => dispatch => {
+export const postComment = (bloginfoId, rating, author, text) => dispatch => {
     
     const newComment = {
-        bloginfosId: bloginfosId,
+        bloginfoId: bloginfoId,
         rating: rating,
         author: author,
         text: text
