@@ -1,7 +1,7 @@
 export const COMMENTS = [
     {
         id: 0,
-        bloginfosId: 0,
+        bloginfoId: 0,
         rating: 5, 
         text: "I love this movie!",
         author: "Tinus Lorvaldes",
@@ -9,7 +9,7 @@ export const COMMENTS = [
     },
     {
         id: 1,
-        bloginfosId: 0,
+        bloginfoId: 0,
         rating: 4, 
         text: "This movie was amazing.",
         author: "Brennen Ech",

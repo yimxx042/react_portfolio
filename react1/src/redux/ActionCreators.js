@@ -90,8 +90,6 @@ export const addComment = comment => ({
 });
 
 
-
-
 export const postComment = (bloginfoId, rating, author, text) => dispatch => {
     
     const newComment = {

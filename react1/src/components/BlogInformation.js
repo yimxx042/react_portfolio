@@ -18,13 +18,14 @@ class CommentForm extends Component {
         this.state = {
             yourName:'',
             comment:'',
+            isModalOpen:false,
             touched: { 
                 YourName: false,
                 comment: false,
             }
         };
         this.toggleModal = this.toggleModal.bind(this);  
-        this.handleSubmit = this.handleSubmit.bind(this);
+     //   this.handleSubmit = this.handleSubmit.bind(this);
     }
   
     toggleModal(){
@@ -33,10 +34,9 @@ class CommentForm extends Component {
         });
     }
 
-    handleSubmit(values) {
-        this.toggleModal();
-        this.props.postComment(this.props.bloginfoId, values.rating, values.author, values.text);
-    }
+     handleSubmit(values) {
+         this.props.postComment(this.props.bloginfoId, values.rating, values.author, values.text);
+     }
 
     render() {
         return (
@@ -47,9 +47,9 @@ class CommentForm extends Component {
                   <p>Thanks for your comments</p>
                     </ModalBody> 
                     </ Modal>
-                        <LocalForm onSubmit={values => this.props.postComment(this.props.bloginfoId, values.rating, values.author, values.text)}>
+                        <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <Row className="form-group">
-                                <Label htmlFor="rating" md={12}>Rating</Label>
+                                <Label htmlFor="rating" name="rating" id="rating" md={12}>Rating</Label>
                                     <Col md={12}>
                                         <Control.select model=".contactType" name="contactType" className="form-control">
                                             <option>1</option>
@@ -106,7 +106,7 @@ class CommentForm extends Component {
                                     </Col>
                                 </Row>
                             </LocalForm>
-                            </React.Fragment>
+                           </React.Fragment>
         )
     }
 }
@@ -123,6 +123,7 @@ function RenderComments({comments, postComment, bloginfoId}) {
                             <Fade in key={comment.id}>
                                 <div id="comment-border">
                                     <p>
+                                        Rating: ☆ {comment.rating} /5 <br />
                                         {comment.text}<br />
                                         -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
                                     </p>
@@ -168,7 +169,7 @@ function BlogInformation(props){
                     <RenderComments 
                         comments={props.comments}
                         postComment={props.postComment}
-                        bloginfoId={props.bloginfo.id}        
+                        bloginfoId={props.bloginfo[0].id}        
                     />
                     </div>       
                 </div>
